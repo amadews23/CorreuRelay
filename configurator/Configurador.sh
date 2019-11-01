@@ -1,6 +1,7 @@
 #!/bin/bash
 # Archivo: Configurar.sh
 # Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
 # Fecha: 29 de Octubre de 2019
 # Descripción: Instalador y configurador para Postfix, Dovecot-pop3, Fetchmail y otros paquetes 
 mi_fqdn='CorreuServer.midominio.com'
