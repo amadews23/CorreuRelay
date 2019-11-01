@@ -3,6 +3,7 @@
 
 # Archivo: existe_texto.py
 # Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
 # Fecha: 30 de Octubre de 2019
 # Descripción: Este programa busca una linea de texto de un archivo
 # Imprime 0 sino encuentra la linea, 1 si la encuentra
