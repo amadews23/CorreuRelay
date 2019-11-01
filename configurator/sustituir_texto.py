@@ -3,6 +3,7 @@
 
 # Archivo: sustituir_texto.py
 # Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
 # Fecha: 29 de Octubre de 2019
 # Descripción: Este programa sustituye linea de texto de un archivo origen en un archivo destino
 # Se pasan como argumentos: el nombre del archivo origen y el destino
