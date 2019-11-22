@@ -258,6 +258,7 @@ postfix_copiar_certificado
 #configuramos Dovecot
 dovecot_configurar_dovecot_conf
 dovecot_configurar_10_auth_conf
+dovecot_configurar_10_mail_conf
 dovecot_configurar_10_master_conf
 #cambiar buzones de mbox a Maildir
 cambiar_a_Maildir
