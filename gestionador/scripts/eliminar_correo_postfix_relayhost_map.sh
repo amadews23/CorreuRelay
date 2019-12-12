@@ -1,7 +1,6 @@
 #!/bin/bash
 # Le pasamos el correo como argumento. Nos eliminara el correo.
-#sender_depend_relay_hostmaps_file='/etc/postfix/relay_hostmap'
-sender_depend_relay_hostmaps_file='relay_hostmap'
+sender_depend_relay_hostmaps_file='/etc/postfix/relay_hostmap'
 
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 
@@ -29,4 +28,4 @@ while read line
 cat $sender_depend_relay_hostmaps_file | sed "$n_linea_encontrada,$n_linea_encontrada d" > $sender_depend_relay_hostmaps_file-tmp
 mv $sender_depend_relay_hostmaps_file-tmp $sender_depend_relay_hostmaps_file
 
-#postmap ${sender_depend_relay_hostmaps_file}
+postmap ${sender_depend_relay_hostmaps_file}
