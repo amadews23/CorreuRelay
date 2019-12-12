@@ -1,3 +1,10 @@
 Cambiar el valor de la variable en: configurar_correo_fetchmail.sh
 pop_remoto='pop3.miproveedor.com'
 
+Cambiar los valores de las variables en: configurar_correo_postfix_relayhost_map.sh
+smtp_remoto=smtp.miproveedor.com
+puerto_smtp_remoto=587
+
+Cambiar los valores de las variables en: modificar_correo_postfix_relayhost_map.sh
+smtp_remoto=smtp.miproveedor.com
+puerto_smtp_remoto=587
