@@ -5,8 +5,8 @@ pedir_password() {
         read -s password_2
 }
 apt-get install sqlite3 -y
-sqlite3 test.db 'CREATE TABLE "cuentas" ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `usuario` TEXT NOT NULL, `correo` TEXT NOT NULL )'
-sqlite3 test.db 'CREATE TABLE "usuarios" ( `Id` INTEGER PRIMARY KEY AUTOINCREMENT, `usuario` TEXT NOT NULL UNIQUE, `password` TEXT NOT NULL )'
+sqlite3 gestion.db 'CREATE TABLE "cuentas" ( `Id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `usuario` TEXT NOT NULL, `correo` TEXT NOT NULL )'
+sqlite3 gestion.db 'CREATE TABLE "usuarios" ( `Id` INTEGER PRIMARY KEY AUTOINCREMENT, `usuario` TEXT NOT NULL UNIQUE, `password` TEXT NOT NULL )'
 echo "Introduzca un nombre de usuario"
 read usuario
 echo "Introduzca la contrasenya"
@@ -15,7 +15,8 @@ echo "Introduzca la contrasenya"
 		echo "Haga el favor de poner bien la contrasenya para ${cuenta_por_defecto}"
 		pedir_password
 	done
-sqlite3 test.db "INSERT INTO usuarios (usuario, password) VALUES('${usuario}','${password_1}');"
+sqlite3 gestion.db "INSERT INTO usuarios (usuario, password) VALUES('${usuario}','${password_1}');"
+apt-get install python-setuptools
 apt-get install wget -y
 wget https://github.com/webpy/webpy/archive/0.40.tar.gz
 tar xvfz 0.40.tar.gz
