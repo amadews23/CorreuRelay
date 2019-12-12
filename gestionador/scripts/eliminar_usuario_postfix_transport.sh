@@ -29,4 +29,4 @@ while read line
 cat $transport_maps_file | sed "$n_linea_encontrada,$n_linea_encontrada d" > $transport_maps_file-tmp
 mv $transport_maps_file-tmp $transport_maps_file
 
-postmap $transport_maps_file
+postmap ${transport_maps_file}
