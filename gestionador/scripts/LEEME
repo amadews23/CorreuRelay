@@ -1,0 +1,3 @@
+Cambiar el valor de la variable en: configurar_correo_fetchmail.sh
+pop_remoto='pop3.miproveedor.com'
+
