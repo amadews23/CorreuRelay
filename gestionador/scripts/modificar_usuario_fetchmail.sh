@@ -1,6 +1,5 @@
 #!/bin/bash
-#fetchmailrc_file='/etc/fetchmailrc'
-fetchmailrc_file='fetchmailrc'
+fetchmailrc_file='/etc/fetchmailrc'
 
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 salto=$(echo -e '\n ')
