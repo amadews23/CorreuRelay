@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#sasl_password_file='/etc/postfix/sasl/sasl_passwd'
-sasl_password_file='sasl_passwd'
+sasl_password_file='/etc/postfix/sasl/sasl_passwd'
+
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 salto=$(echo -e '\n ')
 
@@ -17,4 +17,4 @@ cat $sasl_password_file | sed 's/^[[:space:]]*//' > $sasl_password_file"-tmp"
 #Renombramos temporal
 mv $sasl_password_file"-tmp" $sasl_password_file
 
-#postmap ${sasl_password_file}
+postmap ${sasl_password_file}
