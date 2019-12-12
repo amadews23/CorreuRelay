@@ -29,4 +29,4 @@ while read line
 cat $smtp_generic_maps_file | sed "$n_linea_encontrada,$n_linea_encontrada d" > $smtp_generic_maps_file-tmp
 mv $smtp_generic_maps_file-tmp $smtp_generic_maps_file
 
-postmap $smtp_generic_maps_file
+postmap ${smtp_generic_maps_file}
