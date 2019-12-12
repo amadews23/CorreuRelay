@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#smtp_generic_maps_file='/etc/postfix/generic'
-smtp_generic_maps_file='generic'
+smtp_generic_maps_file='/etc/postfix/generic'
 
 mi_host=$(cat /etc/hostname)
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
@@ -16,5 +15,4 @@ cat $smtp_generic_maps_file | sed 's/^[[:space:]]*//' > $smtp_generic_maps_file"
 #Renombramos temporal
 mv $smtp_generic_maps_file"-tmp" $smtp_generic_maps_file
 
-
-#postmap ${smtp_generic_maps_file}
+postmap ${smtp_generic_maps_file}
