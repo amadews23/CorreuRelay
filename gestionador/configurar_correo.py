@@ -32,7 +32,3 @@ def configurar_correo(correo, correo_password, usuario):
 	configurar_correo_postfix_relayhost_map(correo)
 	configurar_correo_postfix_generic(usuario, correo)
 	configurar_correo_postfix_transport(usuario, correo)
-
-
-
-
