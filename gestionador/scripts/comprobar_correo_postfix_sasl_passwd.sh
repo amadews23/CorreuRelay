@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#sasl_password_file='/etc/postfix/sasl/sasl_passwd'
-sasl_password_file='sasl_passwd'
+sasl_password_file='/etc/postfix/sasl/sasl_passwd'
 
 if [[ $(awk '{print $1}' $sasl_password_file | grep $1) = $1 ]]; then
         #echo "El correo ya existe."
