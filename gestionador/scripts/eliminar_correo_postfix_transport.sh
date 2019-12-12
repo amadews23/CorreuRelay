@@ -1,7 +1,6 @@
 #!/bin/bash
 # Le pasamos el correo como argumento. Nos eliminara el correo.
-#transport_maps_file='/etc/postfix/transport'
-transport_maps_file='transport'
+transport_maps_file='/etc/postfix/transport'
 
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 
@@ -29,4 +28,4 @@ while read line
 cat $transport_maps_file | sed "$n_linea_encontrada,$n_linea_encontrada d" > $transport_maps_file-tmp
 mv $transport_maps_file-tmp $transport_maps_file
 
-#postmap $transport_maps_file
+postmap $transport_maps_file
