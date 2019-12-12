@@ -209,17 +209,17 @@ class ModificarUsuario:
 							resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
 							return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
 
-					else:
-						if (administrar_servicios.reiniciar_servicio_postfix == False):	
-								
-							resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-							return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
-
-						else:	
+						else:
+							if (administrar_servicios.reiniciar_servicio_postfix == False):	
 							
-							resultado = "El usuario se modifico correctamente."
-							model.upd_cuentas_usuario(data.usuario, data.usuario0)
-							return render2.modificar_usuario(data.usuario, data.usuario0, data.correo)
+								resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
+								return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
+
+							else:
+							
+								resultado = "El usuario se modifico correctamente."
+								model.upd_cuentas_usuario(data.usuario, data.usuario0)
+								return render2.modificar_usuario(data.usuario, data.usuario0, data.correo)
 
         else:
             raise web.seeother('/login')
@@ -294,26 +294,26 @@ class ModificarCorreoPassword:
         	data = web.input()
 
 		administrar_servicios.reiniciar_servicios_todos()
-			if (administrar_servicios.reiniciar_servicio_fetchmail == False):
+		if (administrar_servicios.reiniciar_servicio_fetchmail == False):
 
-				resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
-				return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+			resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
+			return render2.modificar_correo_password(data.correo, resultado, data.usuario)
 		
+		else:
+			if (administrar_servicios.reiniciar_servicio_postfix == False):	
+						
+				resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+				return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+
 			else:
 				if (administrar_servicios.reiniciar_servicio_postfix == False):	
-						
-					resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+								
+					resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
 					return render2.modificar_correo_password(data.correo, resultado, data.usuario)
 
-				else:
-					if (administrar_servicios.reiniciar_servicio_postfix == False):	
-								
-						resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-						return render2.modificar_correo_password(data.correo, resultado, data.usuario)
-
-					else:	
-						resultado = "Ha sido modificado."
-						return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+				else:	
+					resultado = "Ha sido modificado."
+					return render2.modificar_correo_password(data.correo, resultado, data.usuario)
         else:
             raise web.seeother('/login')
 
@@ -377,7 +377,7 @@ class CrearCuenta:
 							configurar_correo.configurar_correo(data.correo, data.correo_password1, data.usuario)
 							
 							'''Reiniciamos servicios'''
-							print "INFO: reiniciando servicios...'''
+							print "INFO: reiniciando servicios..."
 
 							'''Comprobamos servicios '''
 							if administrar_servicios.comprobar_servicios_todos() == False:
