@@ -1,7 +1,6 @@
 #!/bin/bash
 # Le pasamos el correo como argumento. Nos eliminara el correo.
-#sasl_password_file='/etc/postfix/sasl/sasl_passwd'
-sasl_password_file='sasl_passwd'
+sasl_password_file='/etc/postfix/sasl/sasl_passwd'
 
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 
@@ -29,4 +28,4 @@ while read line
 cat $sasl_password_file | sed "$n_linea_encontrada,$n_linea_encontrada d" > $sasl_password_file-tmp
 mv $sasl_password_file-tmp $sasl_password_file
 
-#postmap ${sasl_password_file}
+postmap ${sasl_password_file}
