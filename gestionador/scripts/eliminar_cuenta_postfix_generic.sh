@@ -1,7 +1,6 @@
 #!/bin/bash
 # Le pasamos el usuario como argumento. Nos eliminara el correo local usuario@hotname y correo.
-#smtp_generic_maps_file='/etc/postfix/generic'
-smtp_generic_maps_file='generic'
+smtp_generic_maps_file='/etc/postfix/generic'
 
 mi_host=$(cat /etc/hostname)
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
@@ -30,4 +29,4 @@ while read line
 cat $smtp_generic_maps_file | sed "$n_linea_encontrada,$n_linea_encontrada d" > $smtp_generic_maps_file-tmp
 mv $smtp_generic_maps_file-tmp $smtp_generic_maps_file
 
-#postmap $smtp_generic_maps_file
+postmap $smtp_generic_maps_file
