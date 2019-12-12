@@ -1,0 +1,94 @@
+$def with ()
+
+<script src="static/comprobaciones.js"></script>
+
+<div class="texto">Crear cuenta/s</div>
+<div class="center">
+
+	<table>
+		<tr>
+			<td>
+				<form action="/crear_cuenta" method="post">Usuario unix:
+			</td>
+			<td>
+				<input type="text" name="usuario" id ="usuario">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+			<td>
+				<div id="usuario_text"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Password usuario:
+			</td>
+			<td>
+				<input type="password" name="usuario_password1" id="usuario_password1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="usuario_password_text"></div>
+			</td>
+			<td>
+				<input type="password" name="usuario_password2" id="usuario_password2">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Correo:
+			</td>
+			<td>
+				<input type="text" name="correo" id="correo">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+			<td>
+				<div id="correo_text"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Password correo:
+			</td>
+			<td>
+				<input type="password" name="correo_password1" id="correo_password1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="correo_password_text"></div>
+			</td>
+			<td>
+				<input type="password" name="correo_password2" id="correo_password2">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Crear" onClick="return verificar_todo()" />
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="/">Volver atrás</a>
+			</td>
+		</tr>
+	</table>
+</div>
+

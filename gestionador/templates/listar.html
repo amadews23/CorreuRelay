@@ -1,0 +1,30 @@
+$def with (cuentas)
+
+<div class="texto">Lista de cuentas</div>
+<div class="center">
+<table>
+    <tr>
+        <th><td><b>Usuario:</b></td><td><b>Correo:</b></td><td></td><td></td>
+    </tr>
+$for cuenta in cuentas:
+    <tr>
+        <td><td>$cuenta.usuario</td><td> $cuenta.correo</td>
+        <td>
+            <form action="/modificar" method="post">
+		<input type="hidden" name="usuario" value=$cuenta.usuario  />
+		<input type="hidden" name="correo" value="$cuenta.correo" />
+                <input type="submit" value="Modificar"/>
+          </form>
+	</td>
+	<td>
+            <form action="/eliminar" method="post">
+		<input type="hidden" name="usuario" value=$cuenta.usuario  />
+		<input type="hidden" name="correo" value="$cuenta.correo" />
+                <input type="submit" value="Eliminar"/>  
+            </form>
+        </td>
+
+    </tr>    
+</table>  
+</div>
+

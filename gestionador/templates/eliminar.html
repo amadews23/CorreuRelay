@@ -1,0 +1,39 @@
+$def with (usuario, correo)
+
+<div class="texto">Eliminar cuenta</div>
+<div class="center">
+	<table>
+		<tr>
+			<td>Usuario unix:$usuario
+			</td>
+			<td>
+				<form action="/eliminar_cuenta" method="post">
+					<input type="submit" value="Eliminar usuario y correo asociado"/>
+					<input type="hidden" name="usuario" value="$usuario">
+					<input type="hidden" name="correo" value="$correo">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>Correo: $correo
+			</td>
+			<td>
+				<form action="/eliminar_correo" method="post">
+					<input type="submit" value="Eliminar sólo correo"/>
+					<input type="hidden" name="usuario" value="$usuario">
+					<input type="hidden" name="correo" value="$correo">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<br>
+		</tr>
+		<tr>
+			<td>
+				<a href="/">Volver atrás</a>
+			</td>
+		</tr>
+	</table>
+		<br>
+</div>
+
