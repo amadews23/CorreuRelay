@@ -1,6 +1,5 @@
 #!/bin/bash
-#fetchmailrc_file='/etc/fetchmailrc'
-fetchmailrc_file='fetchmailrc'
+fetchmailrc_file='/etc/fetchmailrc'
 
 if [[ $(awk '{print $2}' $fetchmailrc_file | grep $1) = $1 ]]; then
         #echo "El correo ya existe."
