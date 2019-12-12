@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#smtp_generic_maps_file='/etc/postfix/generic'
-smtp_generic_maps_file='generic'
+smtp_generic_maps_file='/etc/postfix/generic'
+
 if [[ $(awk '{print $2}' $smtp_generic_maps_file | grep $1) = $1 ]]; then
         #echo "El correo ya existe."
 	echo 1
