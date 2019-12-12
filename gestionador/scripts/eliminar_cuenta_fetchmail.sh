@@ -1,7 +1,6 @@
 #!/bin/bash
 # Le pasamos el correo como argumento. Nos eliminara el pool que contiene usuario y correo.
-#fetchmailrc_file='/etc/fetchmailrc'
-fetchmailrc_file='fetchmailrc'
+fetchmailrc_file='/etc/fetchmailrc'
 
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 
