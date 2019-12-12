@@ -1,0 +1,5 @@
+Previamente se habra ejecutado en configurator/Configurador.sh para completar la primera instalación.
+
+1- Se debe crear la base de datos, ejecutando el script: install.sh
+2- En scripts/LEEME se indican las variables que sean de configurar en algunos archivos. 
+3- Se puede ejecutar: python Gestion.py ,la aplicación escuchará en el puerto 8080 y accederemos através del navegador.
