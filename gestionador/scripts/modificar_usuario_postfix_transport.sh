@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#transport_maps_file='/etc/postfix/transport'
-transport_maps_file='transport'
+transport_maps_file='/etc/postfix/transport'
 
 mi_host=$(cat /etc/hostname)
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
@@ -16,4 +15,4 @@ cat $transport_maps_file | sed 's/^[[:space:]]*//' > $transport_maps_file"-tmp"
 #Renombramos temporal
 mv $transport_maps_file"-tmp" $transport_maps_file
 
-#postmap ${sender_depend_relay_hostmaps_file}
+postmap ${sender_depend_relay_hostmaps_file}
