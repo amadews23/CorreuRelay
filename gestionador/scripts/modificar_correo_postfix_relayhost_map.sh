@@ -1,9 +1,10 @@
 #!/bin/bash
 
-#sender_depend_relay_hostmaps_file='/etc/postfix/relay_hostmap'
-sender_depend_relay_hostmaps_file='relay_hostmap'
-smtp_remoto=smtp.strato.com
+sender_depend_relay_hostmaps_file='/etc/postfix/relay_hostmap'
+
+smtp_remoto=smtp.miproveedor.com
 puerto_smtp_remoto=587
+
 renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
 salto=$(echo -e '\n ')
 
@@ -16,5 +17,5 @@ cat $sender_depend_relay_hostmaps_file | sed 's/^[[:space:]]*//' > $sender_depen
 #Renombramos temporal
 mv $sender_depend_relay_hostmaps_file"-tmp" $sender_depend_relay_hostmaps_file
 
-#postmap ${sender_depend_relay_hostmaps_file}
+postmap ${sender_depend_relay_hostmaps_file}
 
