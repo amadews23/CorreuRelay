@@ -81,8 +81,8 @@ class Listar:
     def GET(self):
         if session.get('logged_in', False):
             cuentas = model.get_cuentas()
-            #form = self.form()
             return render2.listar(cuentas)
+	
         else:
             raise web.seeother('/login')
 
@@ -101,36 +101,29 @@ class EliminarCuenta:
         if session.get('logged_in', False):
         	data = web.input()
 		eliminar_cuenta.eliminar_correo(data.correo, data.usuario)
-#		'''Si fetchmail NO se inicio bien'''
-#		if (administrar_servicios.reiniciar_servicio_fetchmail == False):
+		'''Si fetchmail NO se inicio bien'''
+		if (administrar_servicios.reiniciar_servicio_fetchmail == False):
 
-#			resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
-#			return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
+			resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
+			return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
 		
-#		else:
-#			if (administrar_servicios.reiniciar_servicio_postfix == False):	
+		else:
+			if (administrar_servicios.reiniciar_servicio_postfix == False):	
 						
-#				resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
-#				return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
+				resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+				return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
 
-#			else:
-#				if (administrar_servicios.reiniciar_servicio_postfix == False):	
+			else:
+				if (administrar_servicios.reiniciar_servicio_postfix == False):	
 								
-#					resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-#					return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
+					resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
+					return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
 
-#				else:	
-#					eliminar_cuenta.eliminar_usuario_unix(data.usuario)
-#					resultado = "La cuenta ha sido eliminada"
-#					model.del_cuentas(data.usuario)
-#					return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
-
-		'''Borrar'''
-		resultado = "La cuenta ha sido eliminada"
-		'''Borrar'''
-		model.del_cuentas(data.usuario)
-		'''Borrar'''
-		return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
+				else:	
+					eliminar_cuenta.eliminar_usuario_unix(data.usuario)
+					resultado = "La cuenta ha sido eliminada"
+					model.del_cuentas(data.usuario)
+					return render2.eliminar_cuenta(data.usuario, data.correo, resultado)
         else:
             raise web.seeother('/login')
 
@@ -141,35 +134,28 @@ class EliminarCorreo:
         	data = web.input()
 		eliminar_cuenta.eliminar_correo(data.correo, data.usuario)
 
-#		'''Si fetchmail NO se inicio bien'''
-#		if (administrar_servicios.reiniciar_servicio_fetchmail == False):
+		'''Si fetchmail NO se inicio bien'''
+		if (administrar_servicios.reiniciar_servicio_fetchmail == False):
 
-#			resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
-#			return render2.eliminar_correo(data.usuario, data.correo, resultado)
+			resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
+			return render2.eliminar_correo(data.usuario, data.correo, resultado)
 		
-#		else:
-#			if (administrar_servicios.reiniciar_servicio_postfix == False):	
+		else:
+			if (administrar_servicios.reiniciar_servicio_postfix == False):	
 						
-#				resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
-#				return render2.eliminar_correo(data.usuario, data.correo, resultado)
+				resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+				return render2.eliminar_correo(data.usuario, data.correo, resultado)
 
-#			else:
-#				if (administrar_servicios.reiniciar_servicio_postfix == False):	
+			else:
+				if (administrar_servicios.reiniciar_servicio_postfix == False):	
 								
-#					resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-#					return render2.eliminar_correo(data.usuario, data.correo, resultado)
+					resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
+					return render2.eliminar_correo(data.usuario, data.correo, resultado)
 
-#				else:	
-#					resultado = "La cuenta ha sido eliminada"
-#					model.del_cuentas(data.usuario)
-#					return render2.eliminar_correo(data.usuario, data.correo, resultado)
-
-		'''Borrar'''
-		resultado = "La cuenta ha sido eliminada"
-		'''Borrar'''
-		model.del_cuentas(data.usuario)
-		'''Borrar'''
-		return render2.eliminar_correo(data.usuario, data.correo, resultado)
+				else:	
+					resultado = "La cuenta ha sido eliminada"
+					model.del_cuentas(data.usuario)
+					return render2.eliminar_correo(data.usuario, data.correo, resultado)
 		
         else:
             raise web.seeother('/login')
@@ -210,33 +196,30 @@ class ModificarUsuario:
 					'''Aplicamos la modificacion de cambio de usuario unix, modificamos archivos en Fetchmail y Postfix'''
 					modificar_usuario.modificar_usuario_sistema(data.usuario, data.usuario0, data.correo)
 					'''Reiniciamos todos los servicios'''
-#					administrar_servicios.reiniciar_servicios_todos()
+					administrar_servicios.reiniciar_servicios_todos()
+					'''Si fetchmail NO se inicio bien'''
+					if (administrar_servicios.reiniciar_servicio_fetchmail == False):
 
-					'''BORRAR'''
-					model.upd_cuentas_usuario(data.usuario, data.usuario0)
-					'''BORRAR'''
-					return render2.modificar_usuario(data.usuario, data.usuario0, data.correo)
-#					'''Si fetchmail NO se inicio bien'''
-#					if (administrar_servicios.reiniciar_servicio_fetchmail == False):
-
-#						resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
-#						return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
+						resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
+						return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
 		
-#					else:
-#						if (administrar_servicios.reiniciar_servicio_postfix == False):	
+					else:
+						if (administrar_servicios.reiniciar_servicio_postfix == False):	
 						
-#							resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
-#							return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
+							resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+							return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
 
-#					else:
-#						if (administrar_servicios.reiniciar_servicio_postfix == False):	
+					else:
+						if (administrar_servicios.reiniciar_servicio_postfix == False):	
 								
-#							resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-#							return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
+							resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
+							return render2.modificar_usuario_error(data.usuario, data.usuario0, data.correo, resultado)
 
-#						else:	
-#							model.upd_cuentas_usuario(data.usuario, data.usuario0)
-#							return render2.modificar_usuario(data.usuario, data.usuario0, data.correo)
+						else:	
+							
+							resultado = "El usuario se modifico correctamente."
+							model.upd_cuentas_usuario(data.usuario, data.usuario0)
+							return render2.modificar_usuario(data.usuario, data.usuario0, data.correo)
 
         else:
             raise web.seeother('/login')
@@ -277,33 +260,30 @@ class ModificarCorreo:
 				else:
 
 					modificar_correo.modificar_correo_sistema(data.correo, data.correo0, data.usuario)
-#					administrar_servicios.reiniciar_servicios_todos()
+					administrar_servicios.reiniciar_servicios_todos()
 
-					'''BORRAR'''
-					model.upd_cuentas_correo(data.correo, data.correo0)
-					'''BORRAR'''
-					return render2.modificar_correo(data.correo, data.correo0, data.usuario)
-#					'''Si fetchmail NO se inicio bien'''
-#					if (administrar_servicios.reiniciar_servicio_fetchmail == False):
+					'''Si fetchmail NO se inicio bien'''
+					if (administrar_servicios.reiniciar_servicio_fetchmail == False):
 
-#						resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
-#						return render2.modificar_correo_error(data.correo, data.correo0, data.usuario, resultado)
+						resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
+						return render2.modificar_correo_error(data.correo, data.correo0, data.usuario, resultado)
 		
-#					else:
-#						if (administrar_servicios.reiniciar_servicio_postfix == False):	
+					else:
+						if (administrar_servicios.reiniciar_servicio_postfix == False):	
 						
-#							resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
-#							return render2.modificar_correo_error(data.correo, data.correo0, data.usuario, resultado)
+							resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+							return render2.modificar_correo_error(data.correo, data.correo0, data.usuario, resultado)
 
-#						else:
-#							if (administrar_servicios.reiniciar_servicio_postfix == False):	
+						else:
+							if (administrar_servicios.reiniciar_servicio_postfix == False):	
 								
-#								resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-#								return render2.modificar_correo_error(data.correo, data.correo0, data.usuario, resultado)
+								resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
+								return render2.modificar_correo_error(data.correo, data.correo0, data.usuario, resultado)
 
-#							else:	
-#								model.upd_correo(data.correo, data.correo0)
-#								return render2.modificar_correo(data.correo, data.correo0, data.usuario)
+							else:	
+							        resultado = "El correo se modifico correctamente."
+								model.upd_correo(data.correo, data.correo0)
+								return render2.modificar_correo(data.correo, data.correo0, data.usuario)
 			
         else:
             raise web.seeother('/login')
@@ -313,31 +293,27 @@ class ModificarCorreoPassword:
         if session.get('logged_in', False):
         	data = web.input()
 
-#		administrar_servicios.reiniciar_servicios_todos()
-#			if (administrar_servicios.reiniciar_servicio_fetchmail == False):
+		administrar_servicios.reiniciar_servicios_todos()
+			if (administrar_servicios.reiniciar_servicio_fetchmail == False):
 
-#				resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
-#				return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+				resultado = "ERROR: Fetchmail no se inicio correctamente. Pongase en contacto con el Administrador"
+				return render2.modificar_correo_password(data.correo, resultado, data.usuario)
 		
-#			else:
-#				if (administrar_servicios.reiniciar_servicio_postfix == False):	
+			else:
+				if (administrar_servicios.reiniciar_servicio_postfix == False):	
 						
-#					resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
-#					return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+					resultado = "ERROR: Postfix no se inicio correctamente. Pongase en contacto con el Administrador"
+					return render2.modificar_correo_password(data.correo, resultado, data.usuario)
 
-#				else:
-#					if (administrar_servicios.reiniciar_servicio_postfix == False):	
+				else:
+					if (administrar_servicios.reiniciar_servicio_postfix == False):	
 								
-#						resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
-#						return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+						resultado = "ERROR: Dovecot no se inicio correctamente. Pongase en contacto con el Administrador"
+						return render2.modificar_correo_password(data.correo, resultado, data.usuario)
 
-#					else:	
-#						resultado = "Ha sido modificado."
-#						return render2.modificar_correo_password(data.correo, resultado, data.usuario)
-		'''BORRAR'''
-		resultado = "Ha sido modificado."
-		'''BORRAR'''
-		return render2.modificar_correo_password(data.correo, resultado, data.usuario)
+					else:	
+						resultado = "Ha sido modificado."
+						return render2.modificar_correo_password(data.correo, resultado, data.usuario)
         else:
             raise web.seeother('/login')
 
@@ -400,28 +376,23 @@ class CrearCuenta:
 							'''Configuramos los archivos del servicio de correo'''
 							configurar_correo.configurar_correo(data.correo, data.correo_password1, data.usuario)
 							
-#							'''Reiniciamos servicios'''
-#							print "INFO: reiniciando servicios...'''
+							'''Reiniciamos servicios'''
+							print "INFO: reiniciando servicios...'''
 
-#							'''Comprobamos servicios '''
-#							if administrar_servicios.comprobar_servicios_todos() == False:
-#							
-#								print "ERROR: algún servicio no se inicio correctamente"
+							'''Comprobamos servicios '''
+							if administrar_servicios.comprobar_servicios_todos() == False:
+							
+								print "ERROR: algún servicio no se inicio correctamente"
 
-#								resultado = "ERROR: Algún servicio no se inicio correctamente. Pongase en contacto con el Administrador"							
-#							else:
-#
-#								print "INFO: Los servicios se reiniciaron correctamente"
-#								'''Insertamos en la BD'''
-#								model.new_cuentas(usuari, correu)
-#								print "INFO: La cuenta ha sido creada correctamente"	
-#								resultado = "La cuenta ha sido creada con exito."
-						        '''BORRAR'''
-							model.new_cuentas(data.usuario, data.correo)
-							'''BORRAR'''
-							resultado = "La cuenta ha sido creada con exito."
-		
-		return render2.crear_cuenta(data.correo, resultado, data.usuario)
+								resultado = "ERROR: Algún servicio no se inicio correctamente. Pongase en contacto con el Administrador"							
+							else:
+
+								print "INFO: Los servicios se reiniciaron correctamente"
+								'''Insertamos en la BD'''
+								model.new_cuentas(usuari, correu)
+								print "INFO: La cuenta ha sido creada correctamente"	
+								resultado = "La cuenta ha sido creada con exito."	
+								return render2.crear_cuenta(data.correo, resultado, data.usuario)
         else:
             raise web.seeother('/login')
 
