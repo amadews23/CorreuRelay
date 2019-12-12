@@ -16,12 +16,5 @@ echo "Introduzca la contrasenya"
 		pedir_password
 	done
 sqlite3 gestion.db "INSERT INTO usuarios (usuario, password) VALUES('${usuario}','${password_1}');"
-apt-get install python-setuptools
-apt-get install wget -y
-wget https://github.com/webpy/webpy/archive/0.40.tar.gz
-tar xvfz 0.40.tar.gz
-cd webpy-0.40
-python setup.py install
-cd ..
-rm -r webpy-0.40
-rm 0.40.tar.gz
+apt-get install python-pip -y
+pip install web.py -y
