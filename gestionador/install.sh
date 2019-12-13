@@ -17,4 +17,4 @@ echo "Introduzca la contrasenya"
 	done
 sqlite3 gestion.db "INSERT INTO usuarios (usuario, password) VALUES('${usuario}','${password_1}');"
 apt-get install python-pip -y
-pip install web.py -y
+pip install web.py
