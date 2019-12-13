@@ -369,7 +369,7 @@ class CrearCuenta:
 
 									print "INFO: Los servicios se reiniciaron correctamente"
 									'''Insertamos en la BD'''
-									model.new_cuentas(usuari, correu)
+									model.new_cuentas(data.usuario, data.correo)
 									print "INFO: La cuenta ha sido creada correctamente"	
 									resultado = "La cuenta ha sido creada con exito."	
 									return render2.crear_cuenta(data.correo, resultado, data.usuario)
