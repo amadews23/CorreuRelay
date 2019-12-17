@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Archivo: administrar_servicios.py
+# Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
+# Fecha: 15 de Diciembre de 2019
+# Descripción: Módulo con funciones para reiniciar y comprobar servicios.
+# 
+
 import os
 import subprocess
 import re
