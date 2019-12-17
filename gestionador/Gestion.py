@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Archivo: Gestion.py
+# Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
+# Fecha: 15 de Diciembre de 2019
+# Descripción: Inicia un servidor web que escucha en el puerto 8080
+# Indexa y genera las páginas, crea y maneja sesiones, actúa como controlador principal.
+# Modifica las cuentas de correo (usuario + correo) que estén almacenadas en la base de datos
+# 
 
 import web
 import model
