@@ -11,4 +11,4 @@ cp $smtp_generic_maps_file $smtp_generic_maps_file${renombrado}
 echo $1'@'$mi_host'	'$2 > $smtp_generic_maps_file
 cat $smtp_generic_maps_file${renombrado} >> $smtp_generic_maps_file
 
-postmap $smtp_generic_maps_file
+postmap ${smtp_generic_maps_file}
