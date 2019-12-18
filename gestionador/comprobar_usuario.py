@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Archivo: comprobar_usuario.py
+# Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
+# Fecha: 15 de Diciembre de 2019
+# Descripción: Módulo con funciones para comprobar si un usuario está dado de alta en la base de datos o en el Sistema.
+#
+# TODO PENDIENTE IMPLEMENTAR :comprobar -> /etc/fetchmailrc.
 import os
 import re
 import model
