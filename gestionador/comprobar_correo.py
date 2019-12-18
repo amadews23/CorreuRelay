@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Archivo: comprobar_correo.py
+# Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
+# Fecha: 15 de Diciembre de 2019
+# Descripción: Módulo con funciones para comprobar si un correo está dado de alta en la base de datos o en algún
+# archivo de configuración.
+#
+# Comprueba en /etc/fetchmailrc, /etc/postfix/sasl_passwd, /etc/postfix/relayhost_map, /etc/postfix/generic,
+# y en /etc/postfix/transport .
 import os
 import re
 import model
