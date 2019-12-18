@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Archivo: comprobar_correo.py
+# Archivo: configurar_correo.py
 # Autor: Bartolomé Vich Lozano
 # Email: amadews23@hotmail.com
 # Fecha: 15 de Diciembre de 2019
