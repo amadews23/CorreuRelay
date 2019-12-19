@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Archivo: 	eliminar_cuenta.py
+# Autor: Bartolomé Vich Lozano
+# Email: amadews23@hotmail.com
+# Fecha: 15 de Diciembre de 2019
+# Descripción: Módulo con funciones para eliminar cuenta del sistema usuario unix y correo.
+#
 import os
 import subprocess
 
