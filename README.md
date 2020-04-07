@@ -2,12 +2,12 @@
 ## Configurator:
 ### PostFix, FetchMail and Dovecot installation. Authenticated SMTP relay configuration, download emails from FetchMail to Dovecot. 
 ## Gestionador:
-### Modification, deletion and creation email accounts
-#### List
+### Modification, deletion and creation email accounts.
+#### List:
 ![ScreenShot](/img/1.png)
-#### Modification
+#### Modification :
 ![ScreenShot](/img/2.png)
-#### Delete
+#### Delete :
 ![ScreenShot](/img/3.png)
-#### Create
+#### Create :
 ![ScreenShot](/img/4.png)
