@@ -11,3 +11,8 @@
 ![ScreenShot](/img/3.png)
 #### Create :
 ![ScreenShot](/img/4.png)
+## Operating scheme
+![ScreenShot](/img/esquema1.png)
+
+
+![ScreenShot](/img/esquema2.png)
