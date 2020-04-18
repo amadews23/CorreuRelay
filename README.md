@@ -16,3 +16,27 @@
 
 
 ![ScreenShot](/img/esquema2.png)
+
+
+![ScreenShot](/img/esquema3.png)
+
+
+![ScreenShot](/img/esquema4.png)
+
+
+![ScreenShot](/img/esquema5.png)
+
+
+![ScreenShot](/img/esquema6.png)
+
+
+![ScreenShot](/img/esquema7.png)
+
+
+![ScreenShot](/img/esquema8.png)
+
+
+![ScreenShot](/img/esquema9.png)
+
+
+![ScreenShot](/img/esquema10.png)
