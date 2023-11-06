@@ -1,4 +1,4 @@
-# CorreuRelay (Tested on Debian 9). 
+# CorreuRelay (Tested on Debian 9) - Currently adapting it to Debian 12. 
 ## Configurator:
 ### PostFix, FetchMail and Dovecot installation. Authenticated SMTP relay configuration, download emails from FetchMail to Dovecot. 
 ## Gestionador:
