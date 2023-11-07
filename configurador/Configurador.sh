@@ -231,7 +231,7 @@ fetchmail_configurar_etc_default_fetchmail() {
 	echo "" >> /etc/default/fetchmail
 }
 sudoers_configurar() {
-	if [[ $(python existe_texto.py -s /etc/sudoers -p 'fetchmail ALL=(ALL) NOPASSWD:/usr/lib/dovecot/deliver') = 0 ]]; then 
+	if [[ $(python3 existe_texto.py -s /etc/sudoers -p 'fetchmail ALL=(ALL) NOPASSWD:/usr/lib/dovecot/deliver') = 0 ]]; then 
         	echo "/etc/sudoers, realizando copia"
         	renombrado=-$(date +"%d-%h-%y_%H:%M:%S").old
         	cp /etc/sudoers /etc/sudoers${renombrado}
